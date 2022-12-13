@@ -117,8 +117,7 @@ async function initialize() {
 
   ws.onopen = async () => {
     appData.connected = true;
-    appData.messages.push({ name: a, message: 'user joined' });
-    //diagram.removeAll();
+    diagram.removeAll();
     let res = await fetch('/diagram');
     let data = await res.json();
     for (let i in data.shapes)
